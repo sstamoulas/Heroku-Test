@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= @page_title %></title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'true' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'true' %>
+  </head>
+
+  <body>
+  <p>(using hello layout)</p>
+    <!-- :list came from content_for in controller -->
+    <%= yield :list %>
+    <%= yield %>
+  </body>
+</html>

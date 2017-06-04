@@ -1,0 +1,35 @@
+<!-- To comment out variables -->
+<%#= @messgae %>
+<h1><%= @page_title %></h1>
+<p>This is a greeting from app/views/hello/index.html.erb</p>
+
+<!-- brackets and for loops are not the standard idiom -->
+
+<!-- with curly braces -->
+
+<%# @count.times { %>
+<%# } %>
+
+<!--OR with times function -->
+
+<%# @count.times do %>
+<%# end %>
+
+<!--OR using for loop -->
+
+<% for i in 1..@count %>
+	<p><%= @bonus %></p>
+<% end %>
+
+<%# The :list is used to yield a different content to the layout %>
+<%# template executes before the layout adds the content %>
+<%# no way to communicate from the layout to the template %>
+<% content_for(:list) do %>
+	<ol>
+		<% for i in 1..@count %>
+			<li>
+				<%= @bonus %>
+			</li>
+		<% end %>
+	</ol>
+<% end %>
